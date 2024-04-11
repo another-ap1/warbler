@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}homepage{% endblock %}
+
+{% block content %}
+
+<h1 class="display-1 text-center">Pets</h1>
+<div>
+    <form>
+        <div>
+        {% for pet in pets %}
+            <figure class="figure">
+                <a href="/edit/{{ pet.id }}"><img class="figure-img" src="{{pet.photo_url}}"></a>
+                    {% if pet.available %} 
+                    <figcaption class="figure-caption">{{ pet.name }} <a class="text-success"><strong>Available!</strong></a></figcaption>
+                    {% else %} 
+                    <figcaption class="figure-caption">{{ pet.name }} <a class="text-danger"><strong>Unavailable</strong></a></figcaption>
+                    {% endif %}
+            </figure>
+        {% endfor %}
+        </div>
+        <button formaction="/add" class="btn btn-lg text-bg-success">Add Pet</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+img {
+    height: 200px;
+    width: 200px;
+}
+.available {
+    color: rgb(0, 214, 0);
+}
+.unavailable {
+    color: red;
+}
